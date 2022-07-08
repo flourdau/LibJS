@@ -5,13 +5,11 @@ window.onload = () => {
     const buttonMax = document.getElementsByClassName("btnMaximize");
     const buttonOpacity = document.getElementsByClassName("btnCode");
 
-    const myContentClock = document.getElementById("myClock");
-
 
     // BOUTONS 
     // CLOSE
     function myClose(e) {
-        e.parentNode.parentNode.parentNode.parentNode.setAttribute('class', 'myDisplayNone');
+        e.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.setAttribute('class', 'myDisplayNone');
     }
 
     for (i = 0; i < buttonClose.length; i++) {
@@ -23,19 +21,16 @@ window.onload = () => {
 
     // MAX
     function myMax(e) {
-        var myContent = e.parentNode.parentNode.parentNode.parentNode;
+        var myContent = e.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
         var myBarContent = myContent.querySelector("div:first-child");
-        var myContent = myContent.querySelector("div:last-child");
-
+        myContent =  myContent.querySelector("div:nth-child(2)");
         if (myBarContent.getAttribute('class') === 'myWidthMax bgColor1_98') {
             myBarContent.setAttribute('class', 'myMax600px bgColor1_98');
             myContent.setAttribute('class', 'myMax600px bgColor1_80');
-            myContentClock.style.display = "block";
         }
         else {
             myBarContent.setAttribute('class', 'myWidthMax bgColor1_98');
             myContent.setAttribute('class', 'myWidthMax bgColor1_80');
-            myContentClock.style.display = "none";
         }
     }
 
@@ -49,25 +44,24 @@ window.onload = () => {
     // MIN
     for (i = 0; i < buttonMin.length; i++) {
         buttonMin[i].addEventListener("click", function() {
-            myClose(this);;
-            
+            myClose(this);
         });
     }
 
 
     // OPACITY
-    function myOpacity(e) {
-        var myContent = e.parentNode.parentNode.parentNode.parentNode;
-        var myBarContent = myContent.querySelector("div:first-child");
-        var myContent = myContent.querySelector("div:last-child");
+    function myOpacity(e) {        
+        var myContent           = e.parentNode.parentNode.parentNode.parentNode;
+        const myShellBar        = myContent.querySelector(".myShell>div>div:first-child");
+        const myShellContent    = myContent.querySelector(".myShell>div>div:nth-child(2)");
 
-        if (myBarContent.getAttribute('class') === 'myMax600px myBgTransparent') {
-            myBarContent.setAttribute('class', 'myMax600px bgColor1_98');
-            myContent.setAttribute('class', 'myMax600px bgColor1_80');
+        if (myShellBar.getAttribute('class') === 'myBgTrsprnt') {
+            myShellBar.setAttribute('class', 'bgColor1_80');
+            myShellContent.setAttribute('class', 'bgColor1_80');
         }
         else {
-            myBarContent.setAttribute('class', 'myMax600px myBgTransparent');
-            myContent.setAttribute('class', 'myMax600px myBgTransparent');
+            myShellBar.setAttribute('class', 'myBgTrsprnt');
+            myShellContent.setAttribute('class', 'myBgTrsprnt');
         }
     }
 
