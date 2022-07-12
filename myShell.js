@@ -9,7 +9,7 @@ window.onload = () => {
     // BOUTONS 
     // CLOSE
     function myClose(e) {
-        e.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.setAttribute('class', 'myDisplayNone');
+        e.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.setAttribute('class', 'myDisplayNone');
     }
 
     for (i = 0; i < buttonClose.length; i++) {
