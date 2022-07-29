@@ -1,4 +1,3 @@
-var myClock     = document.querySelector("#myClock>div");
 var $myDate     = document.getElementById("myDate");
 var $myHour     = document.getElementById("myHour");
 
@@ -25,29 +24,3 @@ function myDate() {
 }
 
 setInterval(myDate, 1000);
-
-// CLOCK
-myClock.addEventListener('click', {
-        handleEvent: function (event) {
-                if (myClock.getAttribute('class') === 'myBgTrsprnt') {
-                        myClock.setAttribute('class', 'myBgClock');
-                }
-                else {
-                        myClock.setAttribute('class', 'myBgTrsprnt');
-                }
-        }
-});
-
-myLogoTemp.addEventListener('click', {
-        handleEvent: function (event) {
-                var myForm      = document.querySelector("#formCalendar");
-                var myAir       = document.querySelector("#myAir>ul");
-                var myLogoTemp  = document.querySelector("#myLogoTemp");
-                var myTemp      = document.querySelector("#myTemp");
-
-                myLogoTemp.setAttribute('class', 'myDisplayNone');
-                myTemp.setAttribute('class', 'myDisplayNone');
-                myForm.setAttribute('class', 'myDisplayNone');
-                myAir.setAttribute('class', 'myDisplayNone');
-        }
-});
